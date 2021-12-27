@@ -23,7 +23,7 @@
   # available, otherwise `xterm-256color` is used.
   #TERM: alacritty
 import:
-- dracula.yml
+- ~/.config/alacritty/dracula.yml
 
 window:
   # Window dimensions (changes require restart)

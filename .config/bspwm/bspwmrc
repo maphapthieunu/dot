@@ -23,7 +23,7 @@ setxkbmap -layout us
 # auto start service
 ibus-daemon -dr -x
 picom --experimental-backends &
-bash ~/.fehbg &
+feh --bg-fill ~/.wallpaper/chloe.png &
 polybar main &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
