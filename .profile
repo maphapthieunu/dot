@@ -8,3 +8,4 @@ export MAIL=thunderbird
 export TERM=konsole
 export VISUAL=kate
 export WINEARCH=win32
+export QT_QPA_PLATFORMTHEME=qt5ct
