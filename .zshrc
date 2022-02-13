@@ -105,9 +105,9 @@ neofetch && cowsay 'Địt con mẹ mày học hành cho nó hẳn hoi vào'
 
 alias update='sudo pacman -Sy && sudo powerpill -Su && yay -Su'
 alias pavucontrol=pavucontrol-qt
-alias ek='nvim ~/.config/kitty/kitty.conf && cp -rfv ~/.config/kitty/kitty.conf ~/nooneasked/.config/kitty/kitty.conf'
+alias ek='nvim ~/.config/kitty/kitty.conf && cp -rfv ~/.config/kitty/* ~/nooneasked/.config/kitty/'
 alias ez='nvim ~/.zshrc && cp -rfv ~/.zshrc ~/nooneasked/.zshrc'
-alias en='nvim ~/.config/neofetch/config.conf && cp -rfv ~/.config/neofetch/config.conf ~/nooneasked/.config/neofetch/config.conf'
+alias en='nvim ~/.config/neofetch/config.conf && cp -rfv ~/.config/neofetch/* ~/nooneasked/.config/neofetch/'
 alias ed="cd ~/dwm && nvim config.h && git add --all && git commit -am 'automated update' && git push && sudo make clean install"
-alias ep='nvim ~/.config/picom/picom.conf && cp -rfv ~/.config/picom/picom.conf ~/nooneasked/.config/picom/picom.conf'
+alias ep='nvim ~/.config/picom/picom.conf && cp -rfv ~/.config/picom/* ~/nooneasked/.config/picom/'
 alias uh="cd ~/nooneasked && git add --all && git commit -am 'automated update' && git push"
