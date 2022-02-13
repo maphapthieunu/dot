@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="lambda"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -102,3 +102,12 @@ source $ZSH/oh-my-zsh.sh
 #
 
 neofetch && cowsay 'Địt con mẹ mày học hành cho nó hẳn hoi vào'
+
+alias update='sudo pacman -Sy && sudo powerpill -Su && yay -Su'
+alias pavucontrol=pavucontrol-qt
+alias ek='nvim ~/.config/kitty/kitty.conf && cp -rfv ~/.config/kitty/kitty.conf ~/nooneasked/.config/kitty/kitty.conf'
+alias ez='nvim ~/.zshrc && cp -rfv ~/.zshrc ~/nooneasked/.zshrc'
+alias en='nvim ~/.config/neofetch/config.conf && cp -rfv ~/.config/neofetch/config.conf ~/nooneasked/.config/neofetch/config.conf'
+alias ed="cd ~/dwm && nvim config.h && git add --all && git commit -am 'automated update' && git push && sudo make clean install"
+alias ep='nvim ~/.config/picom/picom.conf && cp -rfv ~/.config/picom/picom.conf ~/nooneasked/.config/picom/picom.conf'
+alias uh="cd ~/nooneasked && git add --all && git commit -am 'automated update' && git push"
