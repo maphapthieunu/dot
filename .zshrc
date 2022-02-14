@@ -101,7 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-neofetch && cowsay 'Địt con mẹ mày học hành cho nó hẳn hoi vào'
+neofetch && cowsay 'hi'
 
 alias update='sudo pacman -Sy && sudo powerpill -Su && yay -Su'
 alias pavucontrol=pavucontrol-qt
