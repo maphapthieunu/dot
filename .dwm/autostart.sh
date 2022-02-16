@@ -1,10 +1,16 @@
+# for overriding another keyboard layout
 setxkbmap -layout us
-# dwmblocks
-# auto start service
-ibus-daemon -dr -x
+# yay -S dwmbar-git
+dwmblocks &
+# i use fcitx-unikey btw
+ibus-daemon -drxR &
+# compositor (yay -S picom-ibhagwan-git)
 picom --experimental-backends &
+# bg
 feh --bg-fill ~/.wallpaper/chloe.png &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# volume icon
 volumeicon &
+# screenshotter
+spectacle -s &
+# desired terminal emulator
 kitty &
-spectacle -s
