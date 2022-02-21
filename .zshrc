@@ -111,5 +111,6 @@ alias en='nvim ~/.config/neofetch/config.conf && cp -rfv ~/.config/neofetch/* ~/
 alias ed="cd ~/dwm && nvim config.h && git add --all && git commit -am 'automated update' && git push && sudo make clean install"
 alias eda="nvim ~/.dwm/autostart.sh && cp -rfv ~/.dwm/autostart.sh ~/nooneasked/.dwm/autostart.sh"
 alias ep='nvim ~/.config/picom/picom.conf && cp -rfv ~/.config/picom/* ~/nooneasked/.config/picom/'
+alias epr='nvim ~/.profile && cp -rfv ~/.profile ~/nooneasked/.profile'
 alias ck='kvantummanager && rm -rfv ~/nooneasked/.config/Kvantum/* && cp -rfv ~/.config/Kvantum/* ~/nooneasked/.config/Kvantum/'
 alias uh="cd ~/nooneasked && git add --all && git commit -am 'automated update' && git push"
