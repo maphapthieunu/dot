@@ -1,16 +1,26 @@
-# for overriding another keyboard layout
-setxkbmap -layout us
-# yay -S dwmbar-git
-dwmblocks &
-# i use fcitx-unikey btw
+## Dependencies:
+# chaotic-aur/pipewire-support
+# extra/ibus
+# chaotic-aur/picom-ibhagwan-git
+# community/volumeicon
+# extra/spectacle
+# community/kitty
+
+# PipeWire
+/usr/bin/pipewire &
+/usr/bin/pipewire-pulse &
+/usr/bin/wireplumber &
+# Ibus
 ibus-daemon -drxR &
-# compositor (yay -S picom-ibhagwan-git)
-picom --experimental-backends &
-# bg
-feh --bg-fill ~/.wallpaper/chloe.png &
-# volume icon
+# Status bar
+dwmblocks &
+# Volume tray icon
 volumeicon &
-# screenshotter
+# Spectacle
 spectacle -s &
-# desired terminal emulator
+# Background
+nitrogen --restore
+# Compositor
+picom --experimental-backends &
+# Terminal
 kitty &
