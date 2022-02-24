@@ -1,0 +1,9 @@
+[General]
+autoSaveImage=true
+clipboardGroup=PostScreenshotCopyImage
+
+[GuiConfig]
+window-position=66,66
+
+[Save]
+lastSaveLocation=file:///home/npl/Pictures/Screenshot_20220222_204215.png
