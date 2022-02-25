@@ -44,7 +44,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 alias pavucontrol=pavucontrol-qt
-alias ek='nvim ~/.config/kitty/kitty.conf && cp -rfv ~/.config/kitty/* ~/nooneasked/.config/kitty/'
+alias ek='nvim ~/.config/kitty/kitty.conf && rm -rfv ~/nooneasked/.config/kitty/* && cp -rfv ~/.config/kitty/* ~/nooneasked/.config/kitty/'
 alias ez='nvim ~/.zshrc && cp -rfv ~/.zshrc ~/nooneasked/.zshrc'
 alias en='nvim ~/.config/neofetch/config.conf && cp -rfv ~/.config/neofetch/* ~/nooneasked/.config/neofetch/'
 alias ed="cd ~/dwm && rm -rfv config.h && nvim config.def.h && sudo make clean install && git add --all && git commit -am 'automated update' && git push"
@@ -56,7 +56,9 @@ alias uh="cd ~/nooneasked && git add --all && git commit -am 'automated update' 
 alias discord="powercord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy"
 alias powercord="powercord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy"
 alias discord-canary="powercord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy"
+alias epk="nvim ~/.p10k.zsh && cp -rfv ~/.p10k.zsh ~/nooneasked/.p10k.zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+treefetch
