@@ -5,6 +5,7 @@
 # community/volumeicon
 # extra/spectacle
 # community/kitty
+# aur/neo-matrix
 
 # PipeWire
 /usr/bin/pipewire &
@@ -23,4 +24,4 @@ nitrogen --restore
 # Compositor
 picom --experimental-backends &
 # Terminal
-kitty &
+kitty neo-matrix -D -m 'you just opened my pc lol' &
