@@ -52,7 +52,7 @@ alias eda="nvim ~/.dwm/autostart.sh && cp -rfv ~/.dwm/autostart.sh ~/nooneasked/
 alias ep='nvim ~/.config/picom/picom.conf && cp -rfv ~/.config/picom/* ~/nooneasked/.config/picom/'
 alias epr='nvim ~/.profile && cp -rfv ~/.profile ~/nooneasked/.profile'
 alias ck='kvantummanager && rm -rfv ~/nooneasked/.config/Kvantum/* && cp -rfv ~/.config/Kvantum/* ~/nooneasked/.config/Kvantum/'
-alias uh="cd ~/nooneasked && git add --all && git commit -am 'automated update' && git push"
+alias uh="cd ~/nooneasked && git add --all && git commit -a && git push"
 alias discord="powercord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy"
 alias powercord="powercord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy"
 alias discord-canary="powercord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy"
