@@ -19,6 +19,8 @@ dwmblocks &
 spectacle -s &
 # Network tray
 nm-applet &
+# Polkit agent
+/usr/lib/polkit-kde-authentication-agent-1 &
 # Background
 nitrogen --restore
 # Compositor
