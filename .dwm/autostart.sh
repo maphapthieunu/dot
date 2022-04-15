@@ -15,10 +15,10 @@
 ibus-daemon -drxR &
 # Status bar
 dwmblocks &
-# Volume tray icon
-volumeicon &
 # Spectacle
 spectacle -s &
+# Network tray
+nm-applet &
 # Background
 nitrogen --restore
 # Compositor
