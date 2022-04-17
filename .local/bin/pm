@@ -15,7 +15,7 @@ set -e
 set -u
 
 # All supported choices
-all=(shutdown reboot suspend hibernate logout lockscreen)
+all=(shutdown reboot sleep hibernate logout lockscreen)
 
 # By default, show all (i.e., just copy the array)
 show=("${all[@]}")
@@ -24,7 +24,7 @@ declare -A texts
 texts[lockscreen]="lock screen"
 texts[switchuser]="switch user"
 texts[logout]="log out"
-texts[suspend]="suspend"
+texts[sleep]="sleep"
 texts[hibernate]="hibernate"
 texts[reboot]="reboot"
 texts[shutdown]="shut down"
@@ -33,9 +33,9 @@ declare -A icons
 icons[lockscreen]="\uf023"
 icons[switchuser]="\uf518"
 icons[logout]="\uf842"
-icons[suspend]="\uf9b1"
-icons[hibernate]="\uf7c9"
-icons[reboot]="\ufc07"
+icons[sleep]="\uf186"
+icons[hibernate]="\uf9b1"
+icons[reboot]="\uf0e2"
 icons[shutdown]="\uf011"
 icons[cancel]="\u00d7"
 
@@ -43,13 +43,10 @@ declare -A actions
 actions[lockscreen]="loginctl lock-session ${XDG_SESSION_ID-}"
 #actions[switchuser]="???"
 actions[logout]="loginctl terminate-session ${XDG_SESSION_ID-}"
-actions[suspend]="systemctl suspend"
+actions[sleep]="systemctl suspend"
 actions[hibernate]="systemctl hibernate"
 actions[reboot]="systemctl reboot"
 actions[shutdown]="systemctl poweroff"
-
-# By default, ask for confirmation for actions that are irreversible
-confirmations=(reboot shutdown logout)
 
 # By default, no dry run
 dryrun=false
@@ -69,7 +66,7 @@ function check_valid {
 }
 
 # Parse command-line options
-parsed=$(getopt --options=h --longoptions=help,dry-run,confirm:,choices:,choose:,symbols,no-symbols --name "$0" -- "$@")
+parsed=$(getopt --options=h --longoptions=help,dry-run,choices:,choose:,symbols,no-symbols --name "$0" -- "$@")
 if [ $? -ne 0 ]; then
     echo 'Terminating...' >&2
     exit 1
@@ -79,14 +76,14 @@ unset parsed
 while true; do
     case "$1" in
         "-h"|"--help")
-            echo "rofi-power-menu - a power menu mode for Rofi"
+            echo "pm - a power menu mode for Rofi, forked from rofi-power-menu"
             echo
-            echo "Usage: rofi-power-menu [--choices CHOICES] [--confirm CHOICES]"
-            echo "                       [--choose CHOICE] [--dry-run] [--symbols|--no-symbols]"
+            echo "Usage: pm [--choices CHOICES] [--choose CHOICE]"
+            echo "          [--dry-run] [--symbols|--no-symbols]"
             echo
             echo "Use with Rofi in script mode. For instance, to ask for shutdown or reboot:"
             echo
-            echo "  rofi -show menu -modi \"menu:rofi-power-menu --choices=shutdown/reboot\""
+            echo "  rofi -show menu -modi \"pm --choices=shutdown/reboot\""
             echo
             echo "Available options:"
             echo "  --dry-run          Don't perform the selected action but print it to stderr."
@@ -94,16 +91,7 @@ while true; do
             echo "                     as the separator. Available choices are lockscreen, logout,"
             echo "                     suspend, hibernate, reboot and shutdown. By default, all"
             echo "                     available choices are shown."
-            echo "  --confirm CHOICES  Require confirmation for the gives choices only. Use / as"
-            echo "                     the separator. Available choices are lockscreen, logout,"
-            echo "                     suspend, hibernate, reboot and shutdown. By default, only"
-            echo "                     irreversible actions logout, reboot and shutdown require"
-            echo "                     confirmation."
-            echo "  --choose CHOICE    Preselect the given choice and only ask for a confirmation"
-            echo "                     (if confirmation is set to be requested). It is strongly"
-            echo "                     recommended to combine this option with --confirm=CHOICE"
-            echo "                     if the choice wouldn't require confirmation by default."
-            echo "                     Available choices are lockscreen, logout, suspend,"
+            echo "  --choose CHOICE    Available choices are lockscreen, logout, suspend,"
             echo "                     hibernate, reboot and shutdown."
             echo "  --[no-]symbols     Show Unicode symbols or not. Requires a font with support"
             echo "                     for the symbols. Use, for instance, fonts from the"
@@ -114,11 +102,6 @@ while true; do
         "--dry-run")
             dryrun=true
             shift 1
-            ;;
-        "--confirm")
-            IFS='/' read -ra confirmations <<< "$2"
-            check_valid "$1" "${confirmations[@]}"
-            shift 2
             ;;
         "--choices")
             IFS='/' read -ra show <<< "$2"
@@ -169,16 +152,10 @@ function print_selection {
 }
 
 declare -A messages
-declare -A confirmationMessages
 for entry in "${all[@]}"
 do
     messages[$entry]=$(write_message "${icons[$entry]}" "${texts[$entry]^}")
 done
-for entry in "${all[@]}"
-do
-    confirmationMessages[$entry]=$(write_message "${icons[$entry]}" "Yes, ${texts[$entry]}")
-done
-confirmationMessages[cancel]=$(write_message "${icons[cancel]}" "No, cancel")
 
 if [ $# -gt 0 ]
 then
@@ -199,49 +176,12 @@ echo -e "\0markup-rows\x1ftrue"
 
 if [ -z "${selection+x}" ]
 then
-    echo -e "\0prompt\x1fPower menu"
+    echo -e "\0prompt\x1f\uf011"
     for entry in "${show[@]}"
     do
         echo -e "${messages[$entry]}\0icon\x1f${icons[$entry]}"
     done
 else
-    for entry in "${show[@]}"
-    do
-        if [ "$selection" = "$(print_selection "${messages[$entry]}")" ]
-        then
-            # Check if the selected entry is listed in confirmation requirements
-            for confirmation in "${confirmations[@]}"
-            do
-                if [ "$entry" = "$confirmation" ]
-                then
-                    # Ask for confirmation
-                    echo -e "\0prompt\x1fAre you sure"
-                    echo -e "${confirmationMessages[$entry]}\0icon\x1f${icons[$entry]}"
-                    echo -e "${confirmationMessages[cancel]}\0icon\x1f${icons[cancel]}"
-                    exit 0
-                fi
-            done
-            # If not, then no confirmation is required, so mark confirmed
-            selection=$(print_selection "${confirmationMessages[$entry]}")
-        fi
-        if [ "$selection" = "$(print_selection "${confirmationMessages[$entry]}")" ]
-        then
-            if [ $dryrun = true ]
-            then
-                # Tell what would have been done
-                echo "Selected: $entry" >&2
-            else
-                # Perform the action
-                ${actions[$entry]}
-            fi
-            exit 0
-        fi
-        if [ "$selection" = "$(print_selection "${confirmationMessages[cancel]}")" ]
-        then
-            # Do nothing
-            exit 0
-        fi
-    done
     # The selection didn't match anything, so raise an error
     echo "Invalid selection: $selection" >&2
     exit 1
