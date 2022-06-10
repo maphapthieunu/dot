@@ -1,0 +1,86 @@
+/*
+ * ROFI color theme
+ *
+ * Based on Something Found in the Internet
+ *
+ * User: forked from Murzchnvok/rofi-collection
+ * Copyright: *!
+ */
+
+configuration {
+  font: "JetBrainsMono Nerd Font 10";
+
+  drun {
+    display-name: "";
+  }
+
+  run {
+    display-name: "";
+  }
+
+  window {
+    display-name: "";
+  }
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+
+  dbg: #222026;
+  bfg: #ffe4e0;
+  dfg: #cfb9b6;
+  blue: #6fc0f2;
+
+  background-color: @dbg;
+  border-color: @blue;
+  text-color: @bfg;
+}
+
+window {
+  transparency: "real";
+}
+
+mainbox {
+  children: [inputbar, listview];
+  border: 2px;
+}
+
+inputbar {
+  background-color: @dbg;
+  children: [prompt, entry];
+}
+
+entry {
+  background-color: inherit;
+  padding: 12px 3px;
+}
+
+prompt {
+  background-color: inherit;
+  padding: 12px;
+}
+
+listview {
+  lines: 8;
+}
+
+element {
+  children: [element-icon, element-text];
+  text-color: @dfg;
+}
+
+element-icon {
+  padding: 10px 10px;
+}
+
+element-text {
+  padding: 10px 0;
+  text-color: inherit;
+}
+
+element-text selected {
+  text-color: @bfg;
+}
