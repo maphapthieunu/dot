@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/npl/.config/wpg/wallpapers/99846070_p0.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#0C0C0C",
+        "foreground": "#fffaf5",
+        "cursor": "#fffaf5"
+    },
+    "colors": {
+        "color0": "#0C0C0C",
+        "color1": "#C0594B",
+        "color2": "#946F63",
+        "color3": "#CA9671",
+        "color4": "#7D7B86",
+        "color5": "#A3979A",
+        "color6": "#A58974",
+        "color7": "#e0d4d0",
+        "color8": "#252525",
+        "color9": "#ff6650",
+        "color10": "#d08870",
+        "color11": "#ffbf7e",
+        "color12": "#978fbe",
+        "color13": "#e8afbe",
+        "color14": "#e8af84",
+        "color15": "#fffaf5"
+    }
+}
