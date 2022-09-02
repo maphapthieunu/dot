@@ -46,20 +46,20 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 alias pavucontrol=pavucontrol-qt
-alias ek='nvim ~/.config/kitty/kitty.conf && rm -rfv ~/nooneasked/.config/kitty/* && cp -rfv ~/.config/kitty/* ~/nooneasked/.config/kitty/'
-alias ez='nvim ~/.zshrc && cp -rfv ~/.zshrc ~/nooneasked/.zshrc'
-alias en='nvim ~/.config/neofetch/config.conf && cp -rfv ~/.config/neofetch/* ~/nooneasked/.config/neofetch/'
+alias ek='nvim ~/.config/kitty/kitty.conf && rm -rfv ~/dot/.config/kitty/* && cp -rfv ~/.config/kitty/* ~/dot/.config/kitty/'
+alias ez='nvim ~/.zshrc && cp -rfv ~/.zshrc ~/dot/.zshrc'
+alias en='nvim ~/.config/neofetch/config.conf && cp -rfv ~/.config/neofetch/* ~/dot/.config/neofetch/'
 alias ed="cd ~/dwm && nvim config.def.h && sudo make def clean install && git add --all && git commit -am 'automated update' && git push"
-alias eda="nvim ~/.dwm/autostart.sh && cp -rfv ~/.dwm/autostart.sh ~/nooneasked/.dwm/autostart.sh"
-alias ep='nvim ~/.config/picom/picom.conf && cp -rfv ~/.config/picom/* ~/nooneasked/.config/picom/'
-alias epr='nvim ~/.profile && cp -rfv ~/.profile ~/nooneasked/.profile'
-alias ck='kvantummanager && rm -rfv ~/nooneasked/.config/Kvantum/* && cp -rfv ~/.config/Kvantum/* ~/nooneasked/.config/Kvantum/'
-alias uh="cd ~/nooneasked && git add --all && git commit -a && git push"
+alias eda="nvim ~/.config/dwm/autostart.sh && cp -rfv ~/.config/dwm/autostart.sh ~/dot/.config/dwm/autostart.sh"
+alias ep='nvim ~/.config/picom/picom.conf && cp -rfv ~/.config/picom/* ~/dot/.config/picom/'
+alias epr='nvim ~/.profile && cp -rfv ~/.profile ~/dot/.profile'
+alias ck='kvantummanager && rm -rfv ~/dot/.config/Kvantum/* && cp -rfv ~/.config/Kvantum/* ~/dot/.config/Kvantum/'
+alias uh="cd ~/dot && git add --all && git commit -am 'automated update' && git push"
 alias discord="powercord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy"
 alias powercord="powercord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy"
 alias discord-canary="powercord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy"
-alias epk="nvim ~/.p10k.zsh && cp -rfv ~/.p10k.zsh ~/nooneasked/.p10k.zsh"
-alias editnvim="nvim ~/.config/nvim/init.lua && rm -rfv ~/nooneasked/.config/nvim/init.lua && cp -rfv ~/.config/nvim/init.lua ~/nooneasked/.config/nvim"
+alias epk="nvim ~/.p10k.zsh && cp -rfv ~/.p10k.zsh ~/dot/.p10k.zsh"
+alias editnvim="nvim ~/.config/nvim/init.lua && rm -rfv ~/dot/.config/nvim/init.lua && cp -rfv ~/.config/nvim/init.lua ~/dot/.config/nvim"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -1,0 +1,1 @@
+/home/npl/.config/qtile/qtilecolors.py

@@ -34,10 +34,9 @@ configuration {
   padding: 0;
   spacing: 0;
 
-  bg: #282a36;
-  fg: #f8f8f2;
-  blue: #6272a4;
-  purple: #bd93f9;
+  bg: #0c0c0c;
+  fg: #fffaf5;
+  blue: #e0d4d0;
 
   background-color: @bg;
   text-color: @fg;
