@@ -1,11 +1,11 @@
 ## Dependencies:
-# chaotic-aur/pipewire-support
+# aur/pipewire-support
 # extra/ibus
-# chaotic-aur/picom-ibhagwan-git
-# community/volumeicon
+# phyOS-repo/phyOS-picom
 # extra/spectacle
 # community/kitty
 # aur/neo-matrix
+# community/dunst
 
 # PipeWire
 /usr/bin/pipewire &
@@ -19,6 +19,8 @@ dwmblocks &
 spectacle -s &
 # Network tray
 nm-applet &
+# Notifications
+dunst &
 # Polkit agent
 /usr/lib/polkit-kde-authentication-agent-1 &
 # Background

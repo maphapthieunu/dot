@@ -60,6 +60,7 @@ alias powercord="powercord --ignore-gpu-blocklist --disable-features=UseOzonePla
 alias discord-canary="powercord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy"
 alias epk="nvim ~/.p10k.zsh && cp -rfv ~/.p10k.zsh ~/dot/.p10k.zsh"
 alias editnvim="nvim ~/.config/nvim/init.lua && rm -rfv ~/dot/.config/nvim/init.lua && cp -rfv ~/.config/nvim/init.lua ~/dot/.config/nvim"
+alias edu="nvim ~/.config/dunst/dunstrc && rm -rfv ~/dot/.config/dunst/dunstrc && cp -rfv ~/.config/dunst/dunstrc ~/dot/.config/dunst/dunstrc"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
