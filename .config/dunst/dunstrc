@@ -1,6 +1,6 @@
 [colors]
-    background = "#0c0c0c"
-    foreground = "#e0d4d0"
+    background = "#0b0b0e"
+    foreground = "#ffffea"
 
 [global]
     ### Display ###
@@ -22,7 +22,7 @@
     idle_threshold = 120
 
     ### Text ###
-    font = JetBrains Mono Regular 10
+    font = monospace 10
     line_height = 0
 
     markup = full
@@ -57,8 +57,8 @@
     history_length = 20
 
     ### Misc/Advanced ###
-    dmenu = /usr/bin/rofi -show run -p dunst:
-    browser = /usr/bin/brave
+    dmenu = /usr/bin/dmenu
+    browser = /usr/bin/zen-browser
     always_run_script = true
     title = Dunst
     class = Dunst
