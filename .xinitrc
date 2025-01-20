@@ -31,9 +31,12 @@ while true ; do
 done &
 xinput set-prop 11 344 1
 xinput set-prop 11 336 1
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+nm-applet &
+~/.fehbg &
+exec dwm &
 pipewire &
 pipewire-pulse &
 wireplumber &
-nm-applet &
-~/.fehbg &
-exec dwm
+volumeicon
