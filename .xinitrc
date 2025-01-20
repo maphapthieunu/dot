@@ -33,6 +33,7 @@ xinput set-prop 11 344 1
 xinput set-prop 11 336 1
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
+xrandr --dpi 96
 nm-applet &
 ~/.fehbg &
 exec dwm &
