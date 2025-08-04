@@ -7,9 +7,11 @@ EnumerateForwardKeys=
 EnumerateBackwardKeys=
 # Skip first input method while enumerating
 EnumerateSkipFirst=False
+# Time limit in milliseconds for triggering modifier key shortcuts
+ModifierOnlyKeyTimeout=250
 
 [Hotkey/TriggerKeys]
-0=Control+Alt+Shift+Z
+0=Super+space
 1=Zenkaku_Hankaku
 2=Hangul
 
@@ -17,10 +19,10 @@ EnumerateSkipFirst=False
 0=Control+Alt+Shift+Shift_L
 
 [Hotkey/EnumerateGroupForwardKeys]
-0=Super+space
+0=Alt+Super+space
 
 [Hotkey/EnumerateGroupBackwardKeys]
-0=Shift+Super+space
+0=Control+Super+space
 
 [Hotkey/ActivateKeys]
 0=Hangul_Hanja
