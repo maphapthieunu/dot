@@ -19,10 +19,10 @@ ModifierOnlyKeyTimeout=250
 0=Control+Alt+Shift+Shift_L
 
 [Hotkey/EnumerateGroupForwardKeys]
-0=Alt+Super+space
+0=Control+Super+Tab
 
 [Hotkey/EnumerateGroupBackwardKeys]
-0=Control+Super+space
+0=Control+Super+Tab
 
 [Hotkey/ActivateKeys]
 0=Hangul_Hanja
