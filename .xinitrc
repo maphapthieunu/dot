@@ -30,15 +30,13 @@ while true ; do
 	sleep 1s
 done &
 xinput set-prop 11 338 1
-xinput set-prop 11 345 1
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto
-xrandr --dpi 96
+xinput set-prop 11 346 1
+#xrandr --setprovideroutputsource modesetting NVIDIA-0
+#xrandr --auto
+#xrandr --dpi 96
 fcitx5 &
-nm-applet &
 ~/.fehbg &
-exec dwm &
 pipewire &
 pipewire-pulse &
 wireplumber &
-volumeicon
+exec dwm 
