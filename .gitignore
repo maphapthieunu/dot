@@ -1,2 +1,4 @@
 .config/go
 .config/gh
+.config/fcitx/dbus
+.config/ibus/bus
