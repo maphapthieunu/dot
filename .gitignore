@@ -2,3 +2,4 @@
 .config/gh
 .config/fcitx/dbus
 .config/ibus/bus
+.config/pulse

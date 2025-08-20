@@ -1,32 +1,34 @@
-*background: #0B0B0E
-*foreground: #FFFFEA
-*color0: #0B0B0E
-*color1: #9B685D
-*color2: #B1896A
-*color3: #D09875
-*color4: #757391
-*color5: #AA95A0
-*color6: #DFA695
-*color7: #EEDDCB
-*color8: #20202A
-*color9: #D97C68
-*color10: #F8AF77
-*color11: #FFC082
-*color12: #8984CD
-*color13: #F1ADD0
-*color14: #FFCAA9
-*color15: #FFFFEA
+*background: #1e1e2e
+*foreground: #cdd6f4
+*cursorColor: #f5e0dc
 
-dwm.normbordercolor: #0B0B0E
-dwm.normbgcolor: #0B0B0E
-dwm.normfgcolor: #FFFFEA
-dwm.selbordercolor: #FFFFEA
-dwm.selbgcolor: #20202A
-dwm.selfgcolor: #FFFFEA
+*color0: #45475a
+*color8: #585b70
 
-Dunst.lowbg: #0B0B0E
-Dunst.lowfg: #FFFFEA 
-Dunst.normbg: #0B0B0E
-Dunst.normfg: #FFFFEA 
-Dunst.critbg: #0B0B0E
-Dunst.critfg: #FFFFEA 
+*color1: #f38ba8
+*color9: #f38ba8
+
+*color2: #a6e3a1
+*color10: #a6e3a1
+
+*color3: #f9e2af
+*color11: #f9e2af
+
+*color4: #89b4fa
+*color12: #89b4fa
+
+*color5: #f5c2e7
+*color13: #f5c2e7
+
+*color6: #94e2d5
+*color14: #94e2d5
+
+*color7: #bac2de
+*color15: #a6adc8
+
+dwm.normbgcolor: #1e1e2e
+dwm.normbordercolor: #1e1e2e
+dwm.normfgcolor: #cdd6f4
+dwm.selbgcolor: #585b70
+dwm.selbordercolor: #cdd6f4
+dwm.selfgcolor: #cdd6f4
