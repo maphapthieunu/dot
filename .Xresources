@@ -26,9 +26,9 @@
 *color7: #bac2de
 *color15: #a6adc8
 
-dwm.normbgcolor: #1e1e2e
-dwm.normbordercolor: #1e1e2e
+dwm.normbgcolor: #11111b
+dwm.normbordercolor: #11111b
 dwm.normfgcolor: #cdd6f4
-dwm.selbgcolor: #585b70
-dwm.selbordercolor: #cdd6f4
-dwm.selfgcolor: #cdd6f4
+dwm.selbgcolor: #1e1e2e
+dwm.selbordercolor: #cba6f7
+dwm.selfgcolor: #cba6f7

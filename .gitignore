@@ -3,3 +3,4 @@
 .config/fcitx/dbus
 .config/ibus/bus
 .config/pulse
+.config/chromium/**
