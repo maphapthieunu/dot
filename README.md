@@ -6,4 +6,4 @@
 
 ## Programs
 ### .xinitrc
-```sudo pacman -S xorg-xinput xorg-xrandr fcitx5-im feh pipewire pipewire-pulse pipewire-jack wireplumber volumeicon xorg-xsetroot```
+```sudo pacman -S xorg-xinput xorg-xrdb xorg-xrandr fcitx5-im feh pipewire pipewire-pulse pipewire-jack wireplumber volumeicon xorg-xsetroot```
